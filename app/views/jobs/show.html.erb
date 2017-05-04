@@ -1,0 +1,22 @@
+
+<p>
+  <strong>Job Title</strong>
+  <%= @job.jobTitle %>
+</p>
+
+<p>
+  <strong>Job Description:</strong>
+  <%= @job.description %>
+</p>
+<p>
+  <strong>Job Cost:</strong>
+  <%= @job.jobCost %>
+</p>
+<p>
+  <strong>Containers:</strong>
+  <%= @job.containersNeeded %>
+</p>
+
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>

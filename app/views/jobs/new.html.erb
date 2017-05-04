@@ -1,0 +1,36 @@
+
+<%= form_for :job, url: jobs_path do |job| %>
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@job.errors.count, "error") %> prevented
+        this job from being saved:
+      </h2>
+      <ul>
+        <% @job.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= job.text_field :jobTitle, :placeholder => "Title" %>
+  </p>
+  <p>
+    <%= job.text_area :description, :placeholder => "Body" %>
+  </p>
+  <p>
+    <%= job.number_field :jobCost, :placeholder => "Cost", step: :any %>
+  </p>
+  <p>
+    <%= job.number_field :containersNeeded, :placeholder => "Total Containers" %>
+  </p>
+  <p>
+    <%= job.submit "Create Job" %>
+  </p>
+<% end %>
+</div>
+
+
+
+<%= link_to 'Back', jobs_path %>
