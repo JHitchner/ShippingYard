@@ -1,1 +1,22 @@
-<h1>My Home page</h1>
+
+<h1> All Available Jobs </h1>
+
+
+<h1>Listing jobs</h1>
+
+<table>
+  <tr>
+    <th>Title</th><br>
+    <th>Text</th><br>
+  </tr>
+
+  <% @jobs.each do |job| %>
+    <tr>
+      <td><%= job.jobTitle %></td><br>
+      <td><%= job.description %></td><br>
+      <td><%= link_to 'Show', job_path(job) %></td>
+    </tr>
+    <%= link_to 'Edit', edit_job_path(job) %>
+    
+  <% end %>
+</table>

@@ -6,6 +6,8 @@ class JobsController < ApplicationController
 
   def new
     @job = Job.new
+    @ships = Ship.all
+    # @job = ship_jobs.build
   end
 
   def create
@@ -17,13 +19,46 @@ class JobsController < ApplicationController
     end
   end
 
+  def combine
+    @job = Job.find(params[:id])
+    @ship = Ship.find(params[:ship])
+
+
+    @job.ships << @ship
+
+    puts @job.ships
+  end
+
   def show
     @job = Job.find(params[:id])
   end
 
+  def edit
+    @job = Job.find(params[:id])
+
+  end
+
+  def update
+    @job = Job.find(params[:id])
+
+    if @job.update(job_params)
+      redirect_to job_path(@job)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @job = Job.find(params[:id])
+    @job.destroy
+    redirect_to jobs_path
+  end
+
+
+
   private
     def job_params
-      params.require(:job).permit(:jobTitle, :description, :jobCost, :destination, :containersNeeded)
+      params.require(:job).permit(:jobTitle, :description, :jobCost, :origin, :destination, :ship, :containersNeeded, :ship_id)
     end
 
 end

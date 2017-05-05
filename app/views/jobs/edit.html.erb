@@ -1,0 +1,44 @@
+
+<h1>Edit job</h1>
+
+<%= form_for(@job) do |form| %>
+
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@job.errors.count, "error") %> prohibited
+        this job from being saved:
+      </h2>
+      <ul>
+        <% @job.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :jobTitle %><br>
+    <%= form.text_field :jobTitle %>
+  </p>
+
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description%>
+  </p>
+  <p>
+    <%= form.label :jobCost %><br>
+    <%= form.text_area :jobCost%>
+  </p>
+  <p>
+    <%= form.label :containersNeeded %><br>
+    <%= form.text_area :containersNeeded%>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', jobs_path %>

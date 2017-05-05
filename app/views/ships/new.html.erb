@@ -1,0 +1,32 @@
+
+<%= form_for :ship, url: ships_path, :html => { :multipart => true } do |ship| %>
+  <% if @ship.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@ship.errors.count, "error") %> prevented
+        this ship from being saved:
+      </h2>
+      <ul>
+        <% @ship.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= ship.file_field :avatar %>
+  <p>
+    <%= ship.text_field :name, :placeholder => "Ship Name" %>
+  </p>
+  <p>
+    <%= ship.label "Current Port" %>
+    <%= ship.select :location, [["Miami"],["New York"], ["Toronto"]] %>
+  </p>
+  <p>
+    <%= ship.number_field :containers, :placeholder => "Container Capacity"%>
+  </p>
+  <p>
+    <%= ship.submit "Add to Fleet" %>
+  </p>
+<% end %>
+</div>
