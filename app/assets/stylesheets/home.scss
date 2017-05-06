@@ -1,3 +1,29 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// font-family: 'Inconsolata', monospace;
+// font-family: 'Montserrat', sans-serif;
+
+#listAllJobs{
+  position: relative;
+  text-align: center;
+  top: 30px;
+  left: 0px;
+  font-family: 'Inconsolata', monospace;
+}
+#listJobContainer{
+  position: relative;
+  padding: 10px;
+  background-color: #E9EBF8;
+}
+#backgroundHome{
+  position: absolute;
+  top: 250px;
+  padding: 30px;
+  background-color: #799BB1;
+  left: 600px;
+}
+#homejobs{
+  margin: 20px;
+  font-family: 'Montserrat', sans-serif;
+}

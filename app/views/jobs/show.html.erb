@@ -1,29 +1,95 @@
 
-<p>
-  <strong>Job Title</strong>
-  <%= @job.jobTitle %>
+<h1 id="jobShowTitle">
+  Work Order:
+  <a id="insideWorkOrder" href="">
+    <%=@job.jobTitle%>
+  </a>
+</h1>
+
+<div id="jobShowBackground">
+  <div id="jobShowContainer">
+    <p>
+      <strong>Request:</strong>
+      <%= @job.description %>
+    </p>
+    <p>
+      <strong>Cost:</strong>
+      <%= @job.jobCost %>
+    </p>
+    <p>
+      <strong>Containers:</strong>
+      <%= @job.containersNeeded %>
+    </p>
+    <p>
+
+      <strong>Ships Assigned: <%= @job.ship_ids.length %></strong>
+      <% @ships.each do |ship| %>
+      <ul>
+      <li>
+        <strong>Name:</strong>
+        <%= ship.name %>
+      </li>
+      <li>
+        <strong>Containers:</strong>
+        <%= ship.containers %>
+      </li>
+    </ul>
+    <hr>
+      <% end %>
+    </p>
+  </div>
+</div>
+
+
+
+<%= link_to 'View Active Jobs', jobs_path %>
+<%= link_to 'View Fleet', ships_path %>
+<p id="editLink">
+  <%= link_to 'Edit', edit_job_path(@job) %> |
 </p>
 
-<p>
-  <strong>Job Description:</strong>
-  <%= @job.description %>
-</p>
-<p>
-  <strong>Job Cost:</strong>
-  <%= @job.jobCost %>
-</p>
-<p>
-  <strong>Containers:</strong>
-  <%= @job.containersNeeded %>
-</p>
-<p>
-  <strong>Ships Assigned:</strong>
-  <% @ships.each do |ship| %>
-  <%= ship.name %>
+
+<div id="editjobModal">
+<%= form_for(@job) do |form| %>
+
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@job.errors.count, "error") %> prohibited
+        this job from being saved:
+      </h2>
+      <ul>
+        <% @job.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
-</p>
 
+  <p>
+    <%= form.label :jobTitle %><br>
+    <%= form.text_field :jobTitle %>
+  </p>
 
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description%>
+  </p>
+  <p>
+    <%= form.label :jobCost %><br>
+    <%= form.text_area :jobCost%>
+  </p>
+  <p><%= form.label "Add Boats" %>
+     <%= form.collection_check_boxes :ship_ids, Ship.all, :id, :name %>
+  </p>
+  <p>
+    <%= form.label :containersNeeded %><br>
+    <%= form.text_area :containersNeeded%>
+  </p>
 
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+</div>

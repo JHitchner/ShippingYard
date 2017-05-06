@@ -1,0 +1,9 @@
+<h1>Fleet</h1>
+<% @ships.each do |ship| %>
+ <%= ship.name %>
+ <%= image_tag ship.avatar.url(:thumb) %><br>
+ <%= ship.containers %><br>
+ <%= ship.location %><br>
+ <% end %>
+
+ 

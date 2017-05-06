@@ -1,3 +1,34 @@
 // Place all the styles related to the Job controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// Job Show Page
+#jobShowBackground{
+  position: absolute;
+  background-color: #799BB1;
+  z-index: -1;
+  left: 550px;
+  top: 350px;
+  padding: 20px;
+}
+#jobShowContainer{
+  position: relative;
+  background-color: #E9EBF8;
+  padding: 10px;
+  left: 0px;
+  top: 0px;
+  font-family: 'Montserrat', sans-serif;
+}
+#jobShowTitle{
+  position: relative;
+  left: 600px;
+  top: 100px;
+  font-family: 'Inconsolata', monospace;
+}
+#insideWorkOrder{
+  color: #679577;
+  text-decoration: none;
+  cursor: default;
+  font-family: 'Montserrat', sans-serif;
+}

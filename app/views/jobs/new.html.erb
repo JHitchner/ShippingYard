@@ -1,4 +1,7 @@
-
+<% @ship.each do |show| %>
+<%= show.name %>
+<%= show.containers %>
+<% end %>
 <%= form_for :job, url: jobs_path do |job| %>
   <% if @job.errors.any? %>
     <div id="error_explanation">
@@ -43,5 +46,5 @@
 </div>
 
 
-
-<%= link_to 'Back', jobs_path %>
+<%= link_to 'View Available Fleet', ships_path %>
+<%= link_to 'Back to Active Jobs', jobs_path %>

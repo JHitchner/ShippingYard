@@ -1,22 +1,18 @@
 
-<h1> All Available Jobs </h1>
+<h1 id="listAllJobs"> Active Jobs </h1>
 
-
-<h1>Listing jobs</h1>
-
-<table>
-  <tr>
-    <th>Title</th><br>
-    <th>Text</th><br>
-  </tr>
-
-  <% @jobs.each do |job| %>
-    <tr>
-      <td><%= job.jobTitle %></td><br>
-      <td><%= job.description %></td><br>
-      <td><%= link_to 'Show', job_path(job) %></td>
-    </tr>
-    <%= link_to 'Edit', edit_job_path(job) %>
-    
-  <% end %>
-</table>
+<div id="backgroundHome">
+  <div id="listJobContainer">
+    <% @jobs.each do |job| %>
+    <p id="homejobs">
+      <%= job.jobTitle %><strong> | Start: </strong>
+      <%= job.origin %><strong> | End: </strong>
+      <%= job.destination %>
+      <%= link_to 'View', job_path(job) %>
+      <%= link_to 'Edit', edit_job_path(job) %>
+      <%= link_to 'Remove', root_path, method: :delete %><br>
+      <hr>
+    </p>
+    <% end %>
+  </div>
+</div>

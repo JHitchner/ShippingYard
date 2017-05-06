@@ -6,6 +6,7 @@ class JobsController < ApplicationController
 
   def new
     @job = Job.new
+    @ship = Ship.all
 
   end
 
@@ -17,16 +18,16 @@ class JobsController < ApplicationController
       render 'new'
     end
   end
-
-  def combine
-    @job = Job.find(params[:id])
-    @ship = Ship.find(params[:ship])
-
-
-    @job.ships << @ship
-
-    puts @job.ships
-  end
+  #
+  # def combine
+  #   @job = Job.find(params[:id])
+  #   @ship = Ship.find(params[:ship])
+  #
+  #
+  #   @job.ships << @ship
+  #
+  #   puts @job.ships
+  # end
 
   def show
     @job = Job.find(params[:id])
@@ -36,6 +37,7 @@ class JobsController < ApplicationController
 
   def edit
     @job = Job.find(params[:id])
+    @ships = Ship.find(@job.ship_ids)
 
   end
 
