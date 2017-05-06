@@ -16,6 +16,13 @@
   <strong>Containers:</strong>
   <%= @job.containersNeeded %>
 </p>
+<p>
+  <strong>Ships Assigned:</strong>
+  <% @ships.each do |ship| %>
+  <%= ship.name %>
+  <% end %>
+</p>
+
 
 
 <%= link_to 'Edit', edit_job_path(@job) %> |

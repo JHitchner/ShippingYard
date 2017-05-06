@@ -30,6 +30,8 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+    @ships = Ship.find(@job.ship_ids)
+
   end
 
   def edit
