@@ -6,8 +6,7 @@ class JobsController < ApplicationController
 
   def new
     @job = Job.new
-    @ships = Ship.all
-    # @job = ship_jobs.build
+
   end
 
   def create
@@ -58,7 +57,7 @@ class JobsController < ApplicationController
 
   private
     def job_params
-      params.require(:job).permit(:jobTitle, :description, :jobCost, :origin, :destination, :ship, :containersNeeded, :ship_id)
+      params.require(:job).permit(:jobTitle, :description, :jobCost, :origin, :destination,:containersNeeded, ship_ids:[])
     end
 
 end

@@ -27,11 +27,12 @@
     <%= job.label "End" %>
     <%= job.select :destination,[["Miami"],["New York"],["Toronto"]]%>
   </p>
-  <p>
-    <%= job.fields_for :ship_jobs do |ship| %>
+  <p><%= job.label "Add Boats" %>
+     <%= job.collection_check_boxes :ship_ids, Ship.all, :id, :name %>
+    <!-- <%= job.fields_for :ship_jobs do |ship| %>
    <%= ship.label :ship_id %><br>
-   <%= ship.collection_select :ship_id, Ship.all, :id, :name, {include_blank: true}, {:multiple => true, :class=>""} %>
- <% end %>
+   <%= ship.collection_select :ship_id, Ship.all, :id, :name, {:multiple => true, :class=>""} %>
+ <% end %> -->
   </p>
   <p>
     <%= job.number_field :containersNeeded, :placeholder => "Total Containers" %>
