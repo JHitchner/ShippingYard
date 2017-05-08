@@ -1,5 +1,5 @@
 
-<h1 id="jobShowTitle">
+<h1 class="JobTitle">
   Work Order:
   <a id="insideWorkOrder" href="">
     <%=@job.jobTitle%>
@@ -21,36 +21,28 @@
       <%= @job.containersNeeded %>
     </p>
     <p>
-
       <strong>Ships Assigned: <%= @job.ship_ids.length %></strong>
       <% @ships.each do |ship| %>
       <ul>
       <li>
-        <strong>Name:</strong>
         <%= ship.name %>
       </li>
       <li>
-        <strong>Containers:</strong>
         <%= ship.containers %>
+        container(s)
       </li>
     </ul>
     <hr>
       <% end %>
+      <%= link_to 'Active Jobs', root_path %>
     </p>
   </div>
 </div>
 
 
-
-<%= link_to 'View Active Jobs', jobs_path %>
-<%= link_to 'View Fleet', ships_path %>
-<p id="editLink">
-  <%= link_to 'Edit', edit_job_path(@job) %> |
-</p>
-
-
 <div id="editjobModal">
-<%= form_for(@job) do |form| %>
+  <%= link_to 'Remove', job_path(@job), method: :delete, remote: true  %><br>
+  <%= form_for @job do |form| %>
 
   <% if @job.errors.any? %>
     <div id="error_explanation">
@@ -86,10 +78,8 @@
     <%= form.label :containersNeeded %><br>
     <%= form.text_area :containersNeeded%>
   </p>
-
-  <p>
-    <%= form.submit %>
+  <p id="editUpdate">
+   <%= form.submit %>
   </p>
-
-<% end %>
+  <% end %>
 </div>

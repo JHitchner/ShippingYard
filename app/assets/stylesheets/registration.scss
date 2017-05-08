@@ -1,3 +1,72 @@
 // Place all the styles related to the Registration controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#userEditForm{
+  position: relative;
+  left: 0px;
+  top: 0px;
+  background-color:#E9EBF8;
+  padding: 15px;
+  font-family: 'Inconsolata', monospace;
+}
+#userEditBackground{
+  position: absolute;
+  left: 550px;
+  top: 300px;
+  background-color:#799BB1;
+  padding: 20px;
+}
+h2{
+  position: relative;
+  top: 100px;
+  left: 800px;
+  font-family: 'Inconsolata', monospace;
+  font-size: 30px;
+}
+#userSubmitEdit{
+  position: relative;
+  top: 10px;
+}
+#cancelAccount{
+  position: absolute;
+  left: 1300px;
+  top: 300px;
+  font-family: 'Inconsolata', monospace;
+}
+// LogIn
+.SignIn{
+  position: relative;
+  left: 0px;
+  top: 0px;
+  background-color: #E9EBF8;
+  font-family: 'Inconsolata', monospace;
+  padding: 10px;
+}
+.SignInContainer{
+  position: absolute;
+  left: 750px;
+  top: 350px;
+  background-color: #799BB1;
+  padding: 20px;
+}
+.deviseLinks{
+  position: absolute;
+  left: 750px;
+  top: 550px;
+}
+// SignUp
+#SignUn{
+  position: relative;
+  left: 0px;
+  top: 0px;
+  background-color: #E9EBF8;
+  font-family: 'Inconsolata', monospace;
+  padding: 10px;
+}
+#SignUpContainer{
+  position: absolute;
+  left: 750px;
+  top: 350px;
+  background-color: #799BB1;
+  padding: 20px;
+}

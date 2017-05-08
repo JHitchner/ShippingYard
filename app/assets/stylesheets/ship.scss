@@ -1,3 +1,64 @@
 // Place all the styles related to the Ship controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.shipTitle{
+  position: relative;
+  left: 725px;
+  top: 100px;
+  font-family: 'Inconsolata', monospace;
+}
+#newShip{
+  position: relative;
+  left: 0px;
+  top: 0px;
+  background-color:#E9EBF8;
+  padding: 10px;
+  font-family: 'Inconsolata', monospace;
+}
+#newShipContainer{
+  position: absolute;
+  z-index: -1;
+  background-color: #799BB1;
+  left: 750px;
+  top: 350px;
+  padding: 20px;
+}
+// Ship View
+#boatShowTitle{
+  position: relative;
+  left: 750px;
+  top: 100px;
+  font-family: 'Inconsolata', monospace;
+}
+.fleetcontainer{
+  position: absolute;
+  z-index: -1;
+  width: 200px;
+  background-color: #799BB1;
+  left: 800px;
+  top: 350px;
+  padding: 20px;
+}
+.addedShip{
+  position: relative;
+  left: 0px;
+  top: 0px;
+  background-color:#E9EBF8;
+  padding: 10px;
+  font-family: 'Inconsolata', monospace;
+}
+// Fleet
+#fleet{
+  position: absolute;
+  left: 850px;
+  top: 200px;
+  font-family: 'Inconsolata', monospace;
+}
+.fleet{
+  position: relative;
+  left: 0px;
+  top: 0px;
+  background-color:#E9EBF8;
+  padding: 10px;
+  font-family: 'Inconsolata', monospace;
+}

@@ -1,4 +1,4 @@
-
+<h1 class="shipTitle">Add New Ship to Fleet</h1>
 <%= form_for :ship, url: ships_path, :html => { :multipart => true } do |ship| %>
   <% if @ship.errors.any? %>
     <div id="error_explanation">
@@ -13,7 +13,8 @@
       </ul>
     </div>
   <% end %>
-
+  <div id="newShipContainer">
+  <div id="newShip">
     <%= ship.file_field :avatar %>
   <p>
     <%= ship.text_field :name, :placeholder => "Ship Name" %>
@@ -28,5 +29,7 @@
   <p>
     <%= ship.submit "Add to Fleet" %>
   </p>
+</div>
+</div>
 <% end %>
 </div>

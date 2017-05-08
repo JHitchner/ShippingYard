@@ -1,5 +1,19 @@
-Ship was added to the fleet.
-<%= @ship.name%>
-<%= @ship.containers %>
-<%= @ship.location%>
-<%= image_tag @ship.avatar.url(:thumb) %>
+<h1 id="boatShowTitle">Boat Added to Fleet</h1>
+
+<div class="fleetcontainer">
+  <div class="addedShip">
+    <p>
+      Name:<strong><%= @ship.name%></strong>
+    </p>
+    <p>
+      Container(s):<strong> <%= @ship.containers %></strong>
+    </p>
+     <p>
+       Port:<strong> <%= @ship.location%></strong>
+     </p>
+    <p>
+      <%= image_tag @ship.avatar.url(:thumb) %>
+    </p>
+    </ul>
+  </div>
+</div>

@@ -18,17 +18,64 @@
   padding: 10px;
   left: 0px;
   top: 0px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inconsolata', monospace;
 }
-#jobShowTitle{
+.JobTitle{
   position: relative;
-  left: 600px;
+  left: 750px;
   top: 100px;
   font-family: 'Inconsolata', monospace;
 }
 #insideWorkOrder{
-  color: #679577;
+  color: #799BB1;
   text-decoration: none;
   cursor: default;
   font-family: 'Montserrat', sans-serif;
+}
+
+#editjobModal{
+  position: absolute;
+  left: 20px;
+  top: 350px;
+  background-color: #799BB1;
+  border: 2px solid #799BB1;
+  border-radius: 10px;
+  z-index: 2;
+  padding: 30px;
+  // display: none;
+}
+#editLink{
+  position: relative;
+}
+// Job New Page
+
+#availableShips{
+  position: relative;
+  left: 1300px;
+  top: 200px;
+  width: 300px;
+  font-family: 'Inconsolata', monospace;
+}
+.availShipCat{
+  position: relative;
+  left: -20px;
+  width: 150px;
+  margin: 0px;
+}
+#newJobContainer{
+  position: absolute;
+  z-index: -1;
+  background-color:#799BB1;
+  left: 700px;
+  padding: 20px;
+  top: 360px;
+}
+#createJob{
+  position: relative;
+  left: 0px;
+  background-color: #E9EBF8;
+  width: 400px;
+  padding: 10px;
+  font-family: 'Inconsolata', monospace;
+  z-index: 3;
 }

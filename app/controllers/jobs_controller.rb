@@ -7,7 +7,6 @@ class JobsController < ApplicationController
   def new
     @job = Job.new
     @ship = Ship.all
-
   end
 
   def create
@@ -18,16 +17,6 @@ class JobsController < ApplicationController
       render 'new'
     end
   end
-  #
-  # def combine
-  #   @job = Job.find(params[:id])
-  #   @ship = Ship.find(params[:ship])
-  #
-  #
-  #   @job.ships << @ship
-  #
-  #   puts @job.ships
-  # end
 
   def show
     @job = Job.find(params[:id])
@@ -43,7 +32,6 @@ class JobsController < ApplicationController
 
   def update
     @job = Job.find(params[:id])
-
     if @job.update(job_params)
       redirect_to job_path(@job)
     else
@@ -56,8 +44,6 @@ class JobsController < ApplicationController
     @job.destroy
     redirect_to jobs_path
   end
-
-
 
   private
     def job_params

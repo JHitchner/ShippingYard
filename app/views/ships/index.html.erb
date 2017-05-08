@@ -1,9 +1,14 @@
-<h1>Fleet</h1>
-<% @ships.each do |ship| %>
- <%= ship.name %>
- <%= image_tag ship.avatar.url(:thumb) %><br>
- <%= ship.containers %><br>
- <%= ship.location %><br>
- <% end %>
-
- 
+<h1 id="fleet">Fleet</h1>
+<div class="fleetcontainer">
+  <div class="fleet">
+    <% @ships.each do |ship| %>
+      <p>
+        <%= image_tag ship.avatar.url(:thumb) %><br>
+     </p>
+       Name: <%= ship.name %>
+       Container(s) <%= ship.containers %><br>
+       Port: <%= ship.location %><br>
+       <%= link_to 'View', ship_path(ship) %>
+     <% end %>
+  </div>
+ </div>
